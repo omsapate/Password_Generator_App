@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h3>Welcome to Password Generator</h3>
+
+<form  method="post" id="pass_form">
+    <label for="pass_length">Choose Password length : </label>
+    <select name="pass_length">
+            <option value="8" {% if prev_length == '8' %} selected {% endif %}>8</option>
+            <option value="9" {% if prev_length == '9' %} selected {% endif %}>9</option>
+            <option value="10" {% if prev_length == '10' %} selected {% endif %}>10</option>
+            <option value="11" {% if prev_length == '11' %} selected {% endif %}>11</option>
+            <option value="12" {% if prev_length == '12' %} selected {% endif %}>12</option>
+            <option value="13" {% if prev_length == '13' %} selected {% endif %}>13</option>
+            <option value="14" {% if prev_length == '14' %} selected {% endif %}>14</option>
+            <option value="15" {% if prev_length == '15' %} selected {% endif %}>15</option>
+            <option value="16" {% if prev_length == '16' %} selected {% endif %}>16</option>
+    </select>
+    <br>
+    <br>
+
+    <button type="">Generate Password</button>
+
+    <br>
+    <br>
+
+
+    <label for="generatedpassword">Password will appear here :</label>
+    <input type="text" name="genereatedpassword" id="" value = " {{ pass_generate }} " readonly >
+    
+        
+
+
+</form>
+
+
+
+</body>
+</html>
