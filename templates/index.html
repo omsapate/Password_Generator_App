@@ -3,44 +3,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Password Generator</title>
 </head>
 <body>
+
     
 
 <div id="mainDiv" align = 'center'>
     <h1>Welcome to Password Generator</h1>
-    <form  method="post" id="pass_form" >
-        <label for="pass_length">Choose Password length : </label>
-        <select name="pass_length">
-                <option value="8" {% if prev_length == '8' %} selected {% endif %}>8</option>
-                <option value="9" {% if prev_length == '9' %} selected {% endif %}>9</option>
-                <option value="10" {% if prev_length == '10' %} selected {% endif %}>10</option>
-                <option value="11" {% if prev_length == '11' %} selected {% endif %}>11</option>
-                <option value="12" {% if prev_length == '12' %} selected {% endif %}>12</option>
-                <option value="13" {% if prev_length == '13' %} selected {% endif %}>13</option>
-                <option value="14" {% if prev_length == '14' %} selected {% endif %}>14</option>
-                <option value="15" {% if prev_length == '15' %} selected {% endif %}>15</option>
-                <option value="16" {% if prev_length == '16' %} selected {% endif %}>16</option>
-        </select>
-        <br>
-        <br>
-    
-        <button >Generate Password</button>
-    
-        <br>
-        <br>
-    
-    
-        <label for="generatedpassword">Password will appear here :</label>
-        <input type="text" name="genereatedpassword" id="myPass" value = "{{ pass_generate }}" readonly >
-        <button type="button" onclick="CopyPassword()" >Copy Password</button>
+
+    <div id="formDiv">
+        <form  method="post" id="pass_form" >
+            <label for="pass_length">Choose Password length : </label>
+            <select name="pass_length">
+                    <option value="8" {% if prev_length == '8' %} selected {% endif %}>8</option>
+                    <option value="9" {% if prev_length == '9' %} selected {% endif %}>9</option>
+                    <option value="10" {% if prev_length == '10' %} selected {% endif %}>10</option>
+                    <option value="11" {% if prev_length == '11' %} selected {% endif %}>11</option>
+                    <option value="12" {% if prev_length == '12' %} selected {% endif %}>12</option>
+                    <option value="13" {% if prev_length == '13' %} selected {% endif %}>13</option>
+                    <option value="14" {% if prev_length == '14' %} selected {% endif %}>14</option>
+                    <option value="15" {% if prev_length == '15' %} selected {% endif %}>15</option>
+                    <option value="16" {% if prev_length == '16' %} selected {% endif %}>16</option>
+            </select>
+            <br>
+            <br>
+        
+            <button id="generateButton">Generate Password</button>
+        
+            <br>
+            <br>
         
         
+            <label for="generatedpassword">Password will appear here :</label>
+            <input type="text" name="genereatedpassword" id="myPass" value = "{{ pass_generate }}" readonly >
+            <button type="button" onclick="CopyPassword()" >Copy Password</button>
             
-    
-    
-    </form>
+            
+                
+        
+        
+        </form>
+        
+
+    </div>
+
     
     
 </div>

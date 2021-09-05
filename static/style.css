@@ -1,0 +1,50 @@
+body{
+    background-image: url("assets/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+
+}
+
+
+
+h1{
+    margin-top: 3%;
+    font-size: 2.5em;
+    color: white;
+}
+
+#formDiv{
+    padding: 5%;
+    background-color: rgba(0, 0,0, 0.6);
+    color: white;
+    width: 50%;
+    align-content: center;
+    
+}
+button{
+    background-color: #6ceb50;
+    font-size: 1em;
+    padding: 0.5%;
+    border-radius: 0.5em;
+}
+
+input, select{
+    font-size: 1em;
+}
+
+input{
+    margin-right: 1em;
+}
+
+label{
+    font-size: 1.3em;
+}
+
+#generatebutton{
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+

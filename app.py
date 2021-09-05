@@ -44,7 +44,7 @@ def index():
         #print(type(pass_length))
         
         password = Generate_Password(pass_length)
-        print(password)
+        # print(password)
         return render_template("index.html", pass_generate = password, prev_length = str(pass_length))
     else:
         return render_template('index.html')
