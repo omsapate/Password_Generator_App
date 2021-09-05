@@ -6,37 +6,62 @@
     <title>Password Generator</title>
 </head>
 <body>
-    <h3>Welcome to Password Generator</h3>
-
-<form  method="post" id="pass_form">
-    <label for="pass_length">Choose Password length : </label>
-    <select name="pass_length">
-            <option value="8" {% if prev_length == '8' %} selected {% endif %}>8</option>
-            <option value="9" {% if prev_length == '9' %} selected {% endif %}>9</option>
-            <option value="10" {% if prev_length == '10' %} selected {% endif %}>10</option>
-            <option value="11" {% if prev_length == '11' %} selected {% endif %}>11</option>
-            <option value="12" {% if prev_length == '12' %} selected {% endif %}>12</option>
-            <option value="13" {% if prev_length == '13' %} selected {% endif %}>13</option>
-            <option value="14" {% if prev_length == '14' %} selected {% endif %}>14</option>
-            <option value="15" {% if prev_length == '15' %} selected {% endif %}>15</option>
-            <option value="16" {% if prev_length == '16' %} selected {% endif %}>16</option>
-    </select>
-    <br>
-    <br>
-
-    <button type="">Generate Password</button>
-
-    <br>
-    <br>
-
-
-    <label for="generatedpassword">Password will appear here :</label>
-    <input type="text" name="genereatedpassword" id="" value = " {{ pass_generate }} " readonly >
     
+
+<div id="mainDiv" align = 'center'>
+    <h1>Welcome to Password Generator</h1>
+    <form  method="post" id="pass_form" >
+        <label for="pass_length">Choose Password length : </label>
+        <select name="pass_length">
+                <option value="8" {% if prev_length == '8' %} selected {% endif %}>8</option>
+                <option value="9" {% if prev_length == '9' %} selected {% endif %}>9</option>
+                <option value="10" {% if prev_length == '10' %} selected {% endif %}>10</option>
+                <option value="11" {% if prev_length == '11' %} selected {% endif %}>11</option>
+                <option value="12" {% if prev_length == '12' %} selected {% endif %}>12</option>
+                <option value="13" {% if prev_length == '13' %} selected {% endif %}>13</option>
+                <option value="14" {% if prev_length == '14' %} selected {% endif %}>14</option>
+                <option value="15" {% if prev_length == '15' %} selected {% endif %}>15</option>
+                <option value="16" {% if prev_length == '16' %} selected {% endif %}>16</option>
+        </select>
+        <br>
+        <br>
+    
+        <button >Generate Password</button>
+    
+        <br>
+        <br>
+    
+    
+        <label for="generatedpassword">Password will appear here :</label>
+        <input type="text" name="genereatedpassword" id="myPass" value = "{{ pass_generate }}" readonly >
+        <button type="button" onclick="CopyPassword()" >Copy Password</button>
         
+        
+            
+    
+    
+    </form>
+    
+    
+</div>
 
+<script>
+    function CopyPassword(){
+        var copyPass = document.getElementById("myPass");
+        copyPass.select();
+        copyPass.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyPass.value);
+        document.execCommand("copy");
 
-</form>
+        if(document.getElementById("myPass").value === ""){
+            alert("Password is not generated.");
+        }
+
+        //console.log(document.getElementById("myPass").value === "")
+
+    
+    }
+</script>
 
 
 
